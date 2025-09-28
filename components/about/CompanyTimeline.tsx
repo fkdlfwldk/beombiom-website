@@ -7,60 +7,52 @@ import { Badge } from "@/components/ui/badge"
 export function CompanyTimeline() {
   const timeline = [
     {
-      year: "2023",
-      quarter: "Q1",
+      date: "2025.07",
       title: "회사 설립",
-      description: "BEOMBIOM 법인 설립 및 초기 기술 개발 시작",
-      achievements: ["법인 설립", "초기 팀 구성", "기술 개발 착수"],
+      description: "BEOMBIOM 설립",
+      achievements: ["회사 설립"],
     },
     {
-      year: "2023",
-      quarter: "Q3",
-      title: "기술 개발 완료",
-      description: "마이크로바이옴 기반 하이브리드 처리 기술 개발 완료",
-      achievements: ["핵심 기술 개발", "프로토타입 제작", "성능 테스트"],
+      date: "2025 Q1–Q4",
+      title: "기술개발 진행",
+      description: "하이브리드 음식물 처리 기술 및 관련 디바이스 개발",
+      achievements: ["기술개발 진행"],
     },
     {
-      year: "2023",
-      quarter: "Q4",
-      title: "교육 프로그램 참여",
-      description: "중소벤처기업부 제조창업 교육과정 수료",
-      achievements: ["제조창업 교육 수료", "멘토링 프로그램 참여", "사업 모델 구체화"],
+      date: "2025.04",
+      title: "정부지원 프로그램 선정",
+      description: "에코스타트업 예비창업자 선정",
+      achievements: ["정부지원 선정 - 에코스타트업"],
     },
     {
-      year: "2024",
-      quarter: "Q1",
+      date: "2025.07",
+      title: "정부지원 프로그램 선정",
+      description: "컴퍼니빌더 1기 선정",
+      achievements: ["정부지원 선정 - 컴퍼니빌더"],
+    },
+    {
+      date: "2025.08",
+      title: "기후테크 공모전",
+      description: "시제품 제작",
+      achievements: ["시제품 제작 - 기후테크 공모전"],
+    },
+    {
+      date: "2025.10",
       title: "특허 출원",
-      description: "마이크로바이옴 기반 음식물쓰레기 처리 기술 특허 출원",
-      achievements: ["특허 출원", "지적재산권 확보", "기술 보호"],
+      description: "마이크로바이옴 기반 음식물 처리 기술",
+      achievements: ["특허 출원"],
     },
     {
-      year: "2024",
-      quarter: "Q2",
-      title: "정부 지원 프로그램 선정",
-      description: "환경부 에코스타트업 예비창업자 프로그램 선정",
-      achievements: ["정부 지원 선정", "자금 지원 확보", "사업 가속화"],
-    },
-    {
-      year: "2024",
-      quarter: "Q3",
-      title: "수상 및 인정",
-      description: "기후테크 공모전 우수상 수상",
-      achievements: ["공모전 우수상", "기술력 인정", "시장 관심 증대"],
-    },
-    {
-      year: "2024",
-      quarter: "Q4",
+      date: "2025 Q4",
       title: "제품 출시 준비",
-      description: "BIOLOOP 제품 상용화 및 시장 출시 준비",
-      achievements: ["제품 상용화", "양산 준비", "시장 진출"],
+      description: "BIOLOOP 및 관련 디바이스 시장 출시 준비",
+      achievements: ["출시 준비"],
     },
     {
-      year: "2025",
-      quarter: "Q1",
+      date: "2026 Q4",
       title: "시장 진출",
-      description: "국내 시장 본격 진출 및 글로벌 확장 계획",
-      achievements: ["시장 진출", "글로벌 확장", "파트너십 구축"],
+      description: "국내 및 글로벌 시장 진출",
+      achievements: ["시장 진출"],
     },
   ]
 
@@ -83,8 +75,8 @@ export function CompanyTimeline() {
               {/* Timeline dot */}
               <div className="w-16 h-16 rounded-full bg-beombiom-gradient flex items-center justify-center flex-shrink-0 z-10">
                 <div className="text-center">
-                  <div className="text-white font-bold text-xs">{item.year}</div>
-                  <div className="text-white text-xs opacity-80">{item.quarter}</div>
+                  <div className="text-white font-bold text-xs">{item.date.split(" ")[0]}</div>
+                  <div className="text-white text-xs opacity-80">{item.date.split(" ")[1] || ""}</div>
                 </div>
               </div>
 
@@ -95,7 +87,7 @@ export function CompanyTimeline() {
                     <div className="flex items-center space-x-3">
                       <h3 className="text-xl font-bold text-foreground">{item.title}</h3>
                       <Badge className="bg-beombiom-primary/10 text-beombiom-primary">
-                        {item.year} {item.quarter}
+                        {item.date}
                       </Badge>
                     </div>
                     <p className="text-muted-foreground">{item.description}</p>
