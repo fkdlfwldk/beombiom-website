@@ -10,44 +10,30 @@ export function CertificationRoadmap() {
     {
       name: "KC 인증",
       description: "국내 전기용품 안전 인증",
-      status: "completed",
-      date: "2024.03",
+      status: "planned",
+      date: "2025.09",
       type: "안전",
     },
     {
       name: "특허 출원",
       description: "마이크로바이옴 기반 처리 기술",
-      status: "completed",
-      date: "2024.05",
+      status: "in-progress",
+      date: "2025.10",
       type: "지적재산권",
     },
     {
       name: "환경부 인증",
       description: "친환경 기술 인증",
-      status: "in-progress",
-      date: "2024.12",
+      status: "planned",
+      date: "2026.12",
       type: "환경",
     },
     {
       name: "CE 마킹",
       description: "유럽 안전 인증",
       status: "planned",
-      date: "2025.06",
+      date: "2026.12",
       type: "국제",
-    },
-    {
-      name: "UL 인증",
-      description: "미국 안전 인증",
-      status: "planned",
-      date: "2025.09",
-      type: "국제",
-    },
-    {
-      name: "ISO 14001",
-      description: "환경경영시스템 인증",
-      status: "planned",
-      date: "2025.12",
-      type: "환경",
     },
   ]
 
@@ -124,33 +110,6 @@ export function CertificationRoadmap() {
           </motion.div>
         ))}
       </div>
-
-      {/* Timeline */}
-      <motion.div
-        className="mt-16"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <Card className="border-0 shadow-soft-xl bg-gradient-to-br from-beombiom-primary/5 to-beombiom-accent/5">
-          <CardContent className="p-8">
-            <h3 className="text-xl font-bold text-foreground mb-6 text-center">인증 타임라인</h3>
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-beombiom-primary/30" />
-              <div className="space-y-8">
-                {["2024년", "2025년", "2026년"].map((year, index) => (
-                  <div key={year} className="relative flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-beombiom-gradient flex items-center justify-center z-10">
-                      <span className="text-white font-bold text-sm">{year}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div>
     </div>
   )
 }
