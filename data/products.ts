@@ -38,7 +38,7 @@ export const products: Product[] = [
       처리용량: "5kg/일",
       탈취방식: "UV 광촉매",
       크기: "600×400×800mm",
-    ],
+    ,
     specsEn: {
       "Power Consumption": "1.2kW",
       "Processing Capacity": "5kg/day",
