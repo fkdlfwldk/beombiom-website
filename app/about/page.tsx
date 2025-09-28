@@ -5,10 +5,9 @@ import { NavBar } from "@/components/ui/NavBar"
 import { Footer } from "@/components/ui/Footer"
 import { SectionTitle } from "@/components/ui/SectionTitle"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { CompanyTimeline } from "@/components/about/CompanyTimeline"
 import { TeamSection } from "@/components/about/TeamSection"
-import { Target, Eye, Heart, Award, Users, TrendingUp } from "lucide-react"
+import { Target, Eye, Heart } from "lucide-react"
 
 export default function AboutPage() {
   const values = [
@@ -26,30 +25,6 @@ export default function AboutPage() {
       icon: Heart,
       title: "지속가능성",
       description: "미래 세대를 위한 지속가능한 환경을 만들어갑니다.",
-    },
-  ]
-
-  const achievements = [
-    {
-      icon: Award,
-      title: "에코스타트업 예비창업자",
-      organization: "환경부",
-      year: "2024",
-      description: "친환경 스타트업 지원 프로그램 선정",
-    },
-    {
-      icon: TrendingUp,
-      title: "기후테크 공모전 우수상",
-      organization: "한국환경산업기술원",
-      year: "2024",
-      description: "혁신적인 음식물쓰레기 처리 기술 인정",
-    },
-    {
-      icon: Users,
-      title: "제조창업 교육 수료",
-      organization: "중소벤처기업부",
-      year: "2023",
-      description: "제조업 전문 창업 교육과정 완료",
     },
   ]
 
@@ -85,7 +60,11 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-center mb-16"
               >
-                <SectionTitle title="우리의 미션" subtitle="지속가능성은 작게 시작해 무한히 확장됩니다" centered />
+                <SectionTitle
+                  title="우리의 미션"
+                  subtitle="지속가능성은 작게 시작해 무한히 확장됩니다"
+                  centered
+                />
               </motion.div>
 
               <div className="grid md:grid-cols-2 gap-12 mb-16">
@@ -150,7 +129,12 @@ export default function AboutPage() {
         {/* Core Values */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
-            <SectionTitle title="핵심 가치" subtitle="BEOMBIOM이 추구하는 가치와 원칙" centered className="mb-16" />
+            <SectionTitle
+              title="핵심 가치"
+              subtitle="BEOMBIOM이 추구하는 가치와 원칙"
+              centered
+              className="mb-16"
+            />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {values.map((value, index) => {
@@ -182,53 +166,25 @@ export default function AboutPage() {
         {/* Company Timeline */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <SectionTitle title="회사 연혁" subtitle="BEOMBIOM의 성장 과정과 주요 이정표" centered className="mb-16" />
+            <SectionTitle
+              title="회사 연혁"
+              subtitle="BEOMBIOM의 성장 과정과 주요 이정표"
+              centered
+              className="mb-16"
+            />
             <CompanyTimeline />
-          </div>
-        </section>
-
-        {/* Achievements */}
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <SectionTitle title="프로그램 참여 및 수상" subtitle="인정받은 기술력과 성과" centered className="mb-16" />
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {achievements.map((achievement, index) => {
-                const Icon = achievement.icon
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
-                    <Card className="border-0 shadow-soft-xl bg-card h-full">
-                      <CardContent className="p-6 space-y-4">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-12 h-12 rounded-2xl bg-beombiom-gradient flex items-center justify-center">
-                            <Icon className="w-6 h-6 text-white" />
-                          </div>
-                          <Badge className="bg-beombiom-primary text-white">{achievement.year}</Badge>
-                        </div>
-                        <div className="space-y-2">
-                          <h3 className="font-bold text-foreground">{achievement.title}</h3>
-                          <p className="text-sm text-beombiom-primary font-medium">{achievement.organization}</p>
-                          <p className="text-sm text-muted-foreground">{achievement.description}</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                )
-              })}
-            </div>
           </div>
         </section>
 
         {/* Team Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <SectionTitle title="팀 소개" subtitle="BEOMBIOM을 이끌어가는 전문가들" centered className="mb-16" />
+            <SectionTitle
+              title="팀 소개"
+              subtitle="BEOMBIOM을 이끌어가는 전문가들"
+              centered
+              className="mb-16"
+            />
             <TeamSection />
           </div>
         </section>
