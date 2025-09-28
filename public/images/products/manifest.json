@@ -1,0 +1,56 @@
+{
+  "bioloop": {
+    "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAIAAACDRijCAAAC6UlEQVR42j2Ty4pdVRCG/7qsvfe55LSdRBsRhaADEcSHcOTAkeALiO/iW/gUzpwoTkQQBNOYoI40dmLf0umzz97rUr+Dc1oWa1b18ddXa8nXX32Z3PthsRiWw2LV9YOnztTFVEUhIiIqamYEGdFaraWUkkvJtZZWa2ullOJkREREI0mQBAjI/oiIuPs4jk9//+PV7e3Q98vF0Pfd0KWhSyD37YzmtRQGzaym0moNr0FXkqSQqvbr6ZNvv/v+8uoSBACIkLh+tf3sk48/fP/dvI/B8HE3unlEExEzVzMREwiNpJrKT788/uHnJymZqarIuJtyKXmexmlHBiMiWrTw3W7nZrUURqiqqIiICIweaqZCxpxzYChl3o7j9c24Gnyz7pJ7HCitluzb7a5L3roGgbmZmaoJlImq0Uz3yadpJKEq7qqqAFQlokW0WsucZ5/mudbSogFwUzMTUQDkYO5uGq2uVuujzWvTPF1dXd/c7uSwBkSrrbVaS86zv37/CICpppRUNVrN87gv8tSpUATTtANh7gQFOIDA1mqrueQ559mXy0VKaRgWw7Ds+yF1fUr9nXXpUm9m0drt9jaCQYoKCZAC1lpyzvM85Tz7g4cni+VqsVj3w9K9M09mJiIkAHYppZQAiIiqMEIgBFW17/vkyd1UBAx/59EHqTtEUFEAAEjuV+vuptaCAO4uQJDsUuq6NPQ91ys1+Ob4DVUVEbkjRAQZe5gIzs5f/nu+VVc3MTOSLZhLuzw/6zFO05TzPOfZPXWHl7MfnRQJAIwIRinz8/OL+8crErW1ac4RpMo0l8enp/9sBpKmCsBVDQIBIAICQhFhEAolzNxNWtTkaTF0rdVSa614++G6ljzN2ndJVc3VRfcz7TkUCKCQAISEqX3x+acnG//tz78uXo6Ts1/6ozc3H7138tbJg3v3Vl3qVAUCefrjNweBd5L/d8XDf6zT9uby4sWzZ38/f3GmbMdH6/Vq1Q+LvbJ93X+T7f+c+y7VqQAAAABJRU5ErkJggg==",
+    "files": [
+      {
+        "width": 640,
+        "file": "bioloop-640.webp"
+      },
+      {
+        "width": 1280,
+        "file": "bioloop-1280.webp"
+      },
+      {
+        "width": 1920,
+        "file": "bioloop-1920.webp"
+      }
+    ],
+    "original": "bioloop-orig.webp"
+  },
+  "zenoxy": {
+    "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAIAAACDRijCAAADfElEQVR42kXBS3NURRQA4D7n9L3d95GZTIYAURSUlGWpLIDysdAq9q4sF1q68ff4U1ywYe/KnS5ENEIFMsQJaAKTmblzn919TruwLL4PvvnyY5MmubVE+NreFWNsjLGqVqvVOQAqpYqiuH3zoyzf8t43TbWpVqlGBAjshZmF/6PTJEHAEIJSGolsVqgY66Z2PiBgYH/r1ief3vlcKTh5+uhkfvT82TEAXH3jTWbuu1YihxA4BPr2izuvX74UQhicO3txWq2X053pdOeCc31Vb5jlrWvX67p7fHT4ZHZUVVWWwvX9d2/e/qwsR48ePsjzQmutQCEizubzyXi0f+2qSc1iuXpw8KBrm90Lu4PzXT88mR3fvXf3/h+/Hh4//eX3A6VgPNrGxCap8cEBYJoarRMkhCieSGd5mWfZeFQu1+uHhwfr1WJcFkRIhNOdidGx2ZxnaaIAFcBP9x9XzUCIWidaJ4SkA7NIJEKlVBAmoq3cQhQCpQlya0yaDiFkNruydzkwgQJQsNy0uyUAACIiIiDowTnPHEJgDt3gmNmkCRHpJNVaEyGHwCHEKEVROA9KRQAFoFRUSin4n/YsPoRnL86RqsG5bgg+wc1idbZcd70blcXZ4iUlmjlYYwMrpUSisEQAUK+A/vnPo0lGq9MzBZhqUsLBi9GYm1RC6J0bnDcA3vuoIgDGGEWksGmMouIr+P7VS5pQxbhYbdZ1y8JaU1kUo60yz/MEcXs09sH3Q9/3QwhBRKr1+sP9S3vTkQtBhEUkimiTmvWm7V3o6mZ3y+7t7hSZBQBrbJFn66pGhL4fmoasLRAxMLdt3dSrrbJgDsxCxCysZyd/X5xOiszGGK1JyzyPMSLS9njUdp1zLtFYbTYsztrcGBSthsE5H0SCiMTIKlIU1sYaAXAsANAOvvcbFjFJ0jrfdt2mbt7be3s0miCqvg8xDmZcWJMWeebd0HbdbH4SlWrbTl/cLoQlTZM00TEqBCCizFpCaq0eZ8nNGx98/dV3q+V5VS27ejmfHZSFnU62zxenHMKz5yeB2Xmvb7yzryRqrbVOlIoASKRTYxCw79th6NfnL4+PZ2VREKjVank4m//26K9/Fi0Hd/BkPirtZFyOCws//vB9FEEiIh1FooqEpJMUEP0w+OA2dfP05LRu+6Zthr4HxZPxKMuyumk1ye7ONiGy8L9ZyzOEBPuJEwAAAABJRU5ErkJggg==",
+    "files": [
+      {
+        "width": 640,
+        "file": "zenoxy-640.webp"
+      },
+      {
+        "width": 1280,
+        "file": "zenoxy-1280.webp"
+      },
+      {
+        "width": 1920,
+        "file": "zenoxy-1920.webp"
+      }
+    ],
+    "original": "zenoxy-orig.webp"
+  },
+  "butik": {
+    "placeholder": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAIAAACDRijCAAAC+0lEQVR42k1Ty25cRRA9VV3dd+54PLYz4pE4CCwQhCgoiAUghARLWLHhzxA/wAqJH0iWsLF4CAnBwhIkRImfY8/Ej5k7t5/F4s6YlErd1S3VqVMvevD9N9Y6K9YYQ2yICICqqpaV5JJz9wVg/Pz02x++e/Rsv+eqXIpvQvKldk5ErIhlETaGiUEEAArVQtQpM5uTs/OT08loY+3hLz8+PnxmDA+3nPclhFjacnHVCLMhYiYmYhADABGgAINApMbwk/3xz7//4X0cDgav3tg2bECFRP0ssCkiICUGoJ0qAKADWUqXDh0cjVsfwDyo3es3t4mo6tmrywVU1yonFoZZdOWgUFUlELB6qCpQcr6zc4tR/Px8zbS//fVrzLHiOqX0ybvvWZIHu7ujzQ3GEmNJZHWj+1TVlNOt2699/dWXH99/p993f/67Z5xRLZ/e++D+G3dq56zwcNAXxXVWUICWlX6Bk2rr49mCTxdseoPBoLpdjT6799Hb229Op9PZbMYwm4OhdPw7TqQv0NKVCWjJ3ofLeWNt74sPP7+xPqpdfTweP/xp9+DkoL3C3t9Hch0WqkpKCtAL5e5sIrHiqopi2bn5VoyhaeYh+PPLy5JN39azueclyDI2gQi41g6JxFZFSaxzVS+mFGJKuRBxr1ex4c5X4uJSxWqyxQgzLye7/D/W0bebo5da1brua+TJ4XGKbet9bGbrFo1RNciWJJ3tsXVqrRpRZhB1/lpKLjmFEEO7dvf9doGNjc3Z+dRfHOv8hMHW+7svy87GMMTkY5J+Za0VEWHD3YqoEpRLzinDKAlXa8PR+itb432aHDype67iOhdEx7WMFm0bYlh4L2KdsZaNMHdLu2w/cVZiVQXF9mJcE8/H/zSTp7WoY9csogJshI3RSEQkhplUkfOqTQQApWiOyBEpFN+0z49i2zSTw6vzs5ODx5Q9ETlrGBpzCjGWUsRWNRExLQ9ACQAzmNRwMaSVDdOnMZc4ebRF063toYh0q5BzCjGFGH2M/wEXePk+CJ+7swAAAABJRU5ErkJggg==",
+    "files": [
+      {
+        "width": 640,
+        "file": "butik-640.webp"
+      },
+      {
+        "width": 1280,
+        "file": "butik-1280.webp"
+      },
+      {
+        "width": 1920,
+        "file": "butik-1920.webp"
+      }
+    ],
+    "original": "butik-orig.webp"
+  }
+}
