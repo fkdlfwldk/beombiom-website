@@ -38,14 +38,13 @@ export const products: Product[] = [
       처리용량: "5kg/일",
       탈취방식: "UV 광촉매",
       크기: "600×400×800mm",
-    ,
+    },
     specsEn: {
       "Power Consumption": "1.2kW",
       "Processing Capacity": "5kg/day",
       Deodorization: "UV Photocatalyst",
       Size: "600×400×800mm",
     },
-    // ✅ 변경
     image: "/images/products/bioloop-1920.webp",
   },
   {
@@ -64,17 +63,16 @@ export const products: Product[] = [
     ],
     specs: {
       산소농도: "95%",
-      압력범위: "1.3-2.0 ATA",
+      압력범위: "1.3-1.5 ATA",
       진동주파수: "20-200Hz",
       세션시간: "30-90분",
     },
     specsEn: {
       "Oxygen Concentration": "95%",
-      "Pressure Range": "1.3-2.0 ATA",
+      "Pressure Range": "1.3-1.5 ATA",
       "Vibration Frequency": "20-200Hz",
       "Session Time": "30-90min",
     },
-    // ✅ 변경
     image: "/images/products/zenoxy-1920.webp",
   },
   {
@@ -103,7 +101,6 @@ export const products: Product[] = [
       Battery: "2 Hours Continuous Use",
       "Water Resistance": "IPX6",
     },
-    // ✅ 변경
     image: "/images/products/butik-1920.webp",
   },
 ]
