@@ -17,7 +17,6 @@ export default function HomePage() {
         <Hero />
         <ValueProps />
 
-        {/* Featured Products (Row) */}
         <section className="container mx-auto px-4 space-y-10 py-14">
           <FeaturedProductRow
             name="BIOLOOP"
@@ -70,8 +69,4 @@ export default function HomePage() {
         <UseCases />
         <SocialProof />
         <LeadCapture />
-      </main>
-      <Footer />
-    </div>
-  )
-}
+      </ma
