@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic"
 import { Hero } from "@/components/sections/Hero"
 import { ValueProps } from "@/components/sections/ValueProps"
 import { TechnologySnapshot } from "@/components/sections/TechnologySnapshot"
@@ -7,13 +6,12 @@ import { SocialProof } from "@/components/sections/SocialProof"
 import { LeadCapture } from "@/components/sections/LeadCapture"
 import { NavBar } from "@/components/ui/NavBar"
 import { Footer } from "@/components/ui/Footer"
-import { ClientErrorBoundary } from "@/components/util/ClientErrorBoundary"
 
-// ✅ 클라이언트 전용(SSR 비활성화)으로 로드
-const FeaturedProducts = dynamic(
-  () => import("@/components/sections/FeaturedProducts").then((m) => m.FeaturedProducts),
-  { ssr: false }
-)
+// 클라 전용 래퍼만 불러옵니다 (서버 컴포넌트에서 import OK)
+import FeaturedProductsClient from "@/components/sections/FeaturedProductsClient"
+
+// (선택) 에러 바운더리 유지하고 싶으면 그대로 사용 가능
+import { ClientErrorBoundary } from "@/components/util/ClientErrorBoundary"
 
 export default function HomePage() {
   return (
@@ -23,9 +21,9 @@ export default function HomePage() {
         <Hero />
         <ValueProps />
 
-        {/* ✅ 여기서만 에러가 나도 페이지 전체는 안 죽음 */}
+        {/* 클라 전용 섹션은 래퍼로 렌더 */}
         <ClientErrorBoundary fallback={null}>
-          <FeaturedProducts />
+          <FeaturedProductsClient />
         </ClientErrorBoundary>
 
         <TechnologySnapshot />
