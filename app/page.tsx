@@ -7,11 +7,8 @@ import { LeadCapture } from "@/components/sections/LeadCapture"
 import { NavBar } from "@/components/ui/NavBar"
 import { Footer } from "@/components/ui/Footer"
 
-// 클라 전용 래퍼만 불러옵니다 (서버 컴포넌트에서 import OK)
+// ✅ 여기만 새 래퍼로 교체
 import FeaturedProductsClient from "@/components/sections/FeaturedProductsClient"
-
-// (선택) 에러 바운더리 유지하고 싶으면 그대로 사용 가능
-import { ClientErrorBoundary } from "@/components/util/ClientErrorBoundary"
 
 export default function HomePage() {
   return (
@@ -20,12 +17,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <ValueProps />
-
-        {/* 클라 전용 섹션은 래퍼로 렌더 */}
-        <ClientErrorBoundary fallback={null}>
-          <FeaturedProductsClient />
-        </ClientErrorBoundary>
-
+        <FeaturedProductsClient />
         <TechnologySnapshot />
         <UseCases />
         <SocialProof />
