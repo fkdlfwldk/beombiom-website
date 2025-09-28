@@ -52,7 +52,7 @@ export function LeadCapture() {
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">이메일</div>
-                    <div className="text-muted-foreground">contact@beombiom.com</div>
+                    <div className="text-muted-foreground">fkdlfwldk@naver.com</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -61,7 +61,7 @@ export function LeadCapture() {
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">전화</div>
-                    <div className="text-muted-foreground">02-1234-5678</div>
+                    <div className="text-muted-foreground">010-8965-7458</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -70,7 +70,7 @@ export function LeadCapture() {
                   </div>
                   <div>
                     <div className="font-semibold text-foreground">주소</div>
-                    <div className="text-muted-foreground">서울특별시 강남구 테헤란로 123</div>
+                    <div className="text-muted-foreground">서울 서초구 서초동 1308-16</div>
                   </div>
                 </div>
               </div>
