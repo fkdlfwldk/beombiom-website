@@ -9,19 +9,19 @@ export function ContactInfo() {
     {
       icon: Mail,
       title: "이메일",
-      content: "contact@beombiom.com",
+      content: "fkdlfwldk@naver.com",
       description: "일반 문의 및 제품 관련 질문",
     },
     {
       icon: Phone,
       title: "전화",
-      content: "02-1234-5678",
+      content: "010-8965-7458",
       description: "평일 09:00 - 18:00",
     },
     {
       icon: MapPin,
       title: "주소",
-      content: "서울특별시 강남구 테헤란로 123",
+      content: "서울 서초구 서초동 1308-16",
       description: "방문 상담 시 사전 예약 필수",
     },
     {
