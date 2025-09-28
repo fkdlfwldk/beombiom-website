@@ -1,6 +1,6 @@
 import { Hero } from "@/components/sections/Hero"
 import { ValueProps } from "@/components/sections/ValueProps"
-import { FeaturedProducts } from "@/components/sections/FeaturedProducts" // ← 그냥 직접 import
+import { FeaturedProducts } from "@/components/sections/FeaturedProducts"
 import { TechnologySnapshot } from "@/components/sections/TechnologySnapshot"
 import { UseCases } from "@/components/sections/UseCases"
 import { SocialProof } from "@/components/sections/SocialProof"
@@ -15,7 +15,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <ValueProps />
-        <FeaturedProducts />  {/* ← 그대로 사용 */}
+        <FeaturedProducts />
         <TechnologySnapshot />
         <UseCases />
         <SocialProof />
