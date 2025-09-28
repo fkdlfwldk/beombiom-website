@@ -1,3 +1,4 @@
+// data/products.ts
 export interface Product {
   id: string
   name: string
@@ -37,14 +38,15 @@ export const products: Product[] = [
       처리용량: "5kg/일",
       탈취방식: "UV 광촉매",
       크기: "600×400×800mm",
-    },
+    ],
     specsEn: {
       "Power Consumption": "1.2kW",
       "Processing Capacity": "5kg/day",
       Deodorization: "UV Photocatalyst",
       Size: "600×400×800mm",
     },
-    image: "/placeholder-owljl.png",
+    // ✅ 변경
+    image: "/images/products/bioloop-1920.webp",
   },
   {
     id: "zenoxy",
@@ -72,7 +74,8 @@ export const products: Product[] = [
       "Vibration Frequency": "20-200Hz",
       "Session Time": "30-90min",
     },
-    image: "/sleek-oxygen-therapy.png",
+    // ✅ 변경
+    image: "/images/products/zenoxy-1920.webp",
   },
   {
     id: "butik",
@@ -100,6 +103,7 @@ export const products: Product[] = [
       Battery: "2 Hours Continuous Use",
       "Water Resistance": "IPX6",
     },
-    image: "/placeholder-37p0m.png",
+    // ✅ 변경
+    image: "/images/products/butik-1920.webp",
   },
 ]
