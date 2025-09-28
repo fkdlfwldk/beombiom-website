@@ -1,6 +1,6 @@
 import { Hero } from "@/components/sections/Hero"
 import { ValueProps } from "@/components/sections/ValueProps"
-import { FeaturedProducts } from "@/components/sections/FeaturedProducts"
+import { FeaturedProductsRow } from "@/components/sections/FeaturedProductsRow"
 import { TechnologySnapshot } from "@/components/sections/TechnologySnapshot"
 import { UseCases } from "@/components/sections/UseCases"
 import { SocialProof } from "@/components/sections/SocialProof"
