@@ -51,30 +51,27 @@ export function FeaturedProducts() {
                     <div className="mb-6">
                       <h4 className="font-semibold mb-2">주요 사양</h4>
                       <ul className="grid grid-cols-2 gap-2 text-sm">
-                        {p.specs.map((spec, i) => (
-                          <li key={i} className="flex justify-between">
-                            <span className="text-muted-foreground">{spec.label}</span>
-                            <span className="font-medium">{spec.value}</span>
+                        {Object.entries(p.specs).map(([label, value]) => (
+                          <li key={label} className="flex justify-between">
+                            <span className="text-muted-foreground">{label}</span>
+                            <span className="font-medium">{value}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    {p.features && (
+                    {p.features?.length ? (
                       <div className="mb-6">
                         <h4 className="font-semibold mb-2">주요 기능</h4>
                         <div className="flex flex-wrap gap-2">
                           {p.features.map((f, i) => (
-                            <span
-                              key={i}
-                              className="px-3 py-1 rounded-full bg-muted text-sm"
-                            >
+                            <span key={i} className="px-3 py-1 rounded-full bg-muted text-sm">
                               {f}
                             </span>
                           ))}
                         </div>
                       </div>
-                    )}
+                    ) : null}
 
                     <button
                       onClick={() => (window.location.href = `/products#${p.id}`)}
@@ -93,11 +90,7 @@ export function FeaturedProducts() {
                         fill
                         priority
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="
-                          object-cover 
-                          object-[85%_50%] 
-                          rounded-lg
-                        "
+                        className="object-cover object-[85%_50%] rounded-lg"
                       />
                     </div>
                   </div>
