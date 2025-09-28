@@ -23,9 +23,9 @@ export default function TechnologyPage() {
     {
       icon: Zap,
       name: "고압시스템",
-      pressure: "2.0 ATA",
+      pressure: "1.5 ATA",
       description: "고압 환경을 통해 분해 효율을 극대화하고 처리 품질을 향상시킵니다.",
-      details: ["최대 2.0 ATA 압력 적용", "정밀 압력 제어 시스템", "안전 밸브 및 모니터링", "압력 단계별 최적화"],
+      details: ["최대 1.5 ATA 압력 적용", "정밀 압력 제어 시스템", "안전 밸브 및 모니터링", "압력 단계별 최적화"],
       benefits: ["분해 효율 70% 향상", "처리 품질 개선", "안전성 보장"],
     },
     {
