@@ -8,7 +8,7 @@ import { Thermometer, Zap, Wind, Sun, Microscope } from "lucide-react"
 export function TechnologySnapshot() {
   const technologies = [
     { icon: Thermometer, name: "고온처리", description: "120°C 고온 분해" },
-    { icon: Zap, name: "고압시스템", description: "2.0 ATA 압력 적용" },
+    { icon: Zap, name: "고압시스템", description: "1.5 ATA 압력 적용" },
     { icon: Wind, name: "진공처리", description: "산소 차단 환경" },
     { icon: Sun, name: "UV 광촉매", description: "UVC/UVA 살균" },
     { icon: Microscope, name: "마이크로바이옴", description: "미생물 분해 촉진" },
