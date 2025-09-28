@@ -34,70 +34,84 @@ export function FeaturedProducts() {
             <TabsTrigger value="butik">BUTIK</TabsTrigger>
           </TabsList>
 
-          {products.map((p) => (
-            <TabsContent key={p.id} value={p.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="max-w-5xl mx-auto"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                  {/* LEFT: 텍스트 */}
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">{p.name}</h3>
-                    <p className="text-muted-foreground mb-6">{p.description}</p>
+          {products.map((p) => {
+            // ✅ specs가 객체(Record)든, 배열이든 안전하게 처리
+            const specsArr =
+              Array.isArray(p.specs)
+                ? (p.specs as Array<{ label: string; value: string }>)
+                : Object.entries(p.specs || {}).map(([label, value]) => ({
+                    label,
+                    value: String(value),
+                  }))
 
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-2">주요 사양</h4>
-                      <ul className="grid grid-cols-2 gap-2 text-sm">
-                        {Object.entries(p.specs).map(([label, value]) => (
-                          <li key={label} className="flex justify-between">
-                            <span className="text-muted-foreground">{label}</span>
-                            <span className="font-medium">{value}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+            return (
+              <TabsContent key={p.id} value={p.id}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="max-w-6xl mx-auto"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    {/* LEFT: 텍스트 */}
+                    <div>
+                      <h3 className="text-3xl font-bold mb-3">{p.name}</h3>
+                      <p className="text-muted-foreground mb-8">{p.description}</p>
 
-                    {p.features?.length ? (
                       <div className="mb-6">
-                        <h4 className="font-semibold mb-2">주요 기능</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {p.features.map((f, i) => (
-                            <span key={i} className="px-3 py-1 rounded-full bg-muted text-sm">
-                              {f}
-                            </span>
+                        <h4 className="font-semibold mb-3">주요 사양</h4>
+                        <ul className="grid grid-cols-2 gap-3 text-sm">
+                          {specsArr.map((spec, i) => (
+                            <li key={`${spec.label}-${i}`} className="flex justify-between gap-3">
+                              <span className="text-muted-foreground">{spec.label}</span>
+                              <span className="font-medium">{spec.value}</span>
+                            </li>
                           ))}
-                        </div>
+                        </ul>
                       </div>
-                    ) : null}
 
-                    <button
-                      onClick={() => (window.location.href = `/products#${p.id}`)}
-                      className="px-6 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-colors"
-                    >
-                      자세히 보기
-                    </button>
-                  </div>
+                      {!!(p.features && p.features.length) && (
+                        <div className="mb-8">
+                          <h4 className="font-semibold mb-3">주요 기능</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {p.features.map((f: string, i: number) => (
+                              <span
+                                key={`${f}-${i}`}
+                                className="px-3 py-1 rounded-full bg-muted text-sm"
+                              >
+                                {f}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
 
-                  {/* RIGHT: 이미지 */}
-                  <div className="relative md:min-h-[420px] lg:min-h-[480px] flex items-center justify-center">
-                    <div className="relative w-full aspect-[5/3] md:aspect-auto md:h-full max-w-[90%] mx-auto">
-                      <Image
-                        src={p.image}
-                        alt={p.name}
-                        fill
-                        priority
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover object-[85%_50%] rounded-lg"
-                      />
+                      <button
+                        onClick={() => (window.location.href = `/products#${p.id}`)}
+                        className="px-6 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 transition-colors"
+                      >
+                        자세히 보기
+                      </button>
+                    </div>
+
+                    {/* RIGHT: 이미지 (우측 90% 폭, 명시적 height로 보장) */}
+                    <div className="flex items-center justify-center">
+                      <div className="relative w-[90%] h-[280px] md:h-[380px] lg:h-[440px]">
+                        <Image
+                          src={p.image}
+                          alt={p.name}
+                          fill
+                          priority
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover object-[85%_50%] rounded-lg"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            </TabsContent>
-          ))}
+                </motion.div>
+              </TabsContent>
+            )
+          })}
         </Tabs>
       </div>
     </section>
