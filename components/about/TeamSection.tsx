@@ -18,21 +18,6 @@ export function TeamSection() {
     },
   ]
 
-  const advisors = [
-    {
-      name: "김환경",
-      position: "기술 고문",
-      expertise: "환경공학 박사, 20년 경력",
-      description: "환경기술연구원에서 폐기물 처리 기술 연구를 담당하며 BEOMBIOM의 기술 개발을 지원합니다.",
-    },
-    {
-      name: "이창업",
-      position: "사업 고문",
-      expertise: "스타트업 투자 전문가",
-      description: "다수의 기술 스타트업 투자 경험을 바탕으로 사업 전략과 투자 유치를 지원합니다.",
-    },
-  ]
-
   return (
     <div className="space-y-16">
       {/* Core Team */}
@@ -90,36 +75,6 @@ export function TeamSection() {
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* Advisors */}
-      <div className="max-w-4xl mx-auto">
-        <h3 className="text-2xl font-bold text-foreground text-center mb-12">자문단</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {advisors.map((advisor, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="border-0 shadow-soft-xl bg-card h-full">
-                <CardContent className="p-6 space-y-4">
-                  <div className="text-center">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-beombiom-gradient flex items-center justify-center mb-3">
-                      <span className="text-white font-bold text-lg">{advisor.name[0]}</span>
-                    </div>
-                    <h4 className="font-bold text-foreground">{advisor.name}</h4>
-                    <p className="text-beombiom-primary font-medium text-sm">{advisor.position}</p>
-                    <p className="text-xs text-muted-foreground">{advisor.expertise}</p>
-                  </div>
-                  <p className="text-sm text-muted-foreground text-center">{advisor.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
