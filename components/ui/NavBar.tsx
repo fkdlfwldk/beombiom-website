@@ -14,6 +14,7 @@ export function NavBar() {
     { href: "/solutions", label: "솔루션", labelEn: "Solutions" },
     { href: "/technology", label: "기술", labelEn: "Technology" },
     { href: "/about", label: "회사소개", labelEn: "About" },
+    { href: "/news", label: "소식", labelEn: "News" },
   ]
 
   return (
