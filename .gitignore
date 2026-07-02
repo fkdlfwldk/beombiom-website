@@ -1,0 +1,34 @@
+# Vercel
+.vercel
+
+# Env
+.env*
+!.env.example
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# npm's lockfile is not authoritative here (pnpm-lock.yaml is, per
+# Vercel project settings); npm was only used locally as a fallback
+# since pnpm wasn't installed on this machine.
+package-lock.json
+
+# Next.js build output
+.next
+out
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
