@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
 import { Send } from "lucide-react"
+import { submitInquiry } from "@/app/actions/inquiries"
 
 interface ContactFormProps {
   contactType: string
@@ -24,16 +25,40 @@ export function ContactForm({ contactType }: ContactFormProps) {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    const form = e.currentTarget
+    const fd = new FormData(form)
+
+    const result = await submitInquiry({
+      name: String(fd.get("name") ?? ""),
+      email: String(fd.get("email") ?? ""),
+      phone: String(fd.get("phone") ?? ""),
+      company: String(fd.get("company") ?? ""),
+      contactType,
+      inquiryType: String(fd.get("inquiryType") ?? ""),
+      message: String(fd.get("message") ?? ""),
+      privacyAgree: fd.get("privacyAgree") === "on",
+      marketingAgree: fd.get("marketingAgree") === "on",
+      sourcePage: typeof window !== "undefined" ? window.location.pathname : undefined,
+      honeypot: String(fd.get("company_website") ?? ""),
+    })
+
+    setIsSubmitting(false)
+
+    if ("error" in result && result.error) {
+      toast({
+        title: "전송에 실패했습니다",
+        description: result.error,
+        variant: "destructive",
+      })
+      return
+    }
 
     toast({
       title: "문의가 성공적으로 전송되었습니다!",
       description: "24시간 이내에 답변드리겠습니다.",
     })
 
-    setIsSubmitting(false)
-    ;(e.target as HTMLFormElement).reset()
+    form.reset()
   }
 
   const getInquiryOptions = () => {
@@ -69,31 +94,41 @@ export function ContactForm({ contactType }: ContactFormProps) {
       <Card className="border-0 shadow-soft-xl bg-card">
         <CardContent className="p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* 봇 트랩. 사람 눈에는 보이지 않으며, 값이 채워져 오면 스팸으로 처리한다. */}
+            <input
+              type="text"
+              name="company_website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="absolute left-[-9999px] h-0 w-0 opacity-0"
+            />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">이름 *</label>
-                <Input placeholder="홍길동" required />
+                <Input name="name" placeholder="홍길동" required />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">회사명</label>
-                <Input placeholder="회사명을 입력하세요" />
+                <Input name="company" placeholder="회사명을 입력하세요" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">이메일 *</label>
-                <Input type="email" placeholder="example@company.com" required />
+                <Input name="email" type="email" placeholder="example@company.com" required />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">연락처</label>
-                <Input placeholder="010-1234-5678" />
+                <Input name="phone" placeholder="010-1234-5678" />
               </div>
             </div>
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground">문의 세부 유형 *</label>
-              <Select required>
+              <Select name="inquiryType" required>
                 <SelectTrigger>
                   <SelectValue placeholder="세부 문의 유형을 선택하세요" />
                 </SelectTrigger>
@@ -109,12 +144,12 @@ export function ContactForm({ contactType }: ContactFormProps) {
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground">메시지 *</label>
-              <Textarea placeholder="문의 내용을 자세히 작성해 주세요..." className="min-h-[120px]" required />
+              <Textarea name="message" placeholder="문의 내용을 자세히 작성해 주세요..." className="min-h-[120px]" required />
             </div>
 
             <div className="space-y-4">
               <div className="flex items-start space-x-2">
-                <input type="checkbox" id="privacy" className="mt-1" required />
+                <input type="checkbox" id="privacy" name="privacyAgree" className="mt-1" required />
                 <label htmlFor="privacy" className="text-xs text-muted-foreground">
                   개인정보 수집 및 이용에 동의합니다. (필수)
                   <br />
@@ -122,7 +157,7 @@ export function ContactForm({ contactType }: ContactFormProps) {
                 </label>
               </div>
               <div className="flex items-start space-x-2">
-                <input type="checkbox" id="marketing" className="mt-1" />
+                <input type="checkbox" id="marketing" name="marketingAgree" className="mt-1" />
                 <label htmlFor="marketing" className="text-xs text-muted-foreground">
                   마케팅 정보 수신에 동의합니다. (선택)
                 </label>

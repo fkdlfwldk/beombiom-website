@@ -63,7 +63,7 @@ export default function PrivacyPage() {
                     <div className="text-muted-foreground space-y-2">
                       <p>성명: 권기범</p>
                       <p>직책: 대표이사</p>
-                      <p>연락처: contact@beombiom.com</p>
+                      <p>연락처: ceo@beombiom.com</p>
                     </div>
                   </div>
 

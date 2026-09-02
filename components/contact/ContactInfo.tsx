@@ -9,7 +9,7 @@ export function ContactInfo() {
     {
       icon: Mail,
       title: "이메일",
-      content: "fkdlfwldk@naver.com",  // ✅ 수정됨
+      content: "ceo@beombiom.com",
       description: "일반 문의 및 제품 관련 질문",
     },
     {
