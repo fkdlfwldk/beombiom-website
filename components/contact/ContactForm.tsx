@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -19,7 +19,15 @@ interface ContactFormProps {
 
 export function ContactForm({ contactType }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  // Radix Select는 form.reset()에 반응하지 않으므로 선택값을 직접 들고 있는다.
+  const [inquiryType, setInquiryType] = useState("")
   const { toast } = useToast()
+
+  // 탭(contactType)이 바뀌면 세부 유형 목록 자체가 달라진다.
+  // 이전 탭에서 고른 값이 남아 있으면 목록에 없는 값이 제출되므로 비운다.
+  useEffect(() => {
+    setInquiryType("")
+  }, [contactType])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -34,7 +42,7 @@ export function ContactForm({ contactType }: ContactFormProps) {
       phone: String(fd.get("phone") ?? ""),
       company: String(fd.get("company") ?? ""),
       contactType,
-      inquiryType: String(fd.get("inquiryType") ?? ""),
+      inquiryType,
       message: String(fd.get("message") ?? ""),
       privacyAgree: fd.get("privacyAgree") === "on",
       marketingAgree: fd.get("marketingAgree") === "on",
@@ -59,6 +67,7 @@ export function ContactForm({ contactType }: ContactFormProps) {
     })
 
     form.reset()
+    setInquiryType("")
   }
 
   const getInquiryOptions = () => {
@@ -128,7 +137,7 @@ export function ContactForm({ contactType }: ContactFormProps) {
 
             <div className="space-y-2">
               <label className="text-sm font-medium text-foreground">문의 세부 유형 *</label>
-              <Select name="inquiryType" required>
+              <Select name="inquiryType" required value={inquiryType} onValueChange={setInquiryType}>
                 <SelectTrigger>
                   <SelectValue placeholder="세부 문의 유형을 선택하세요" />
                 </SelectTrigger>

@@ -16,6 +16,8 @@ import { submitInquiry } from "@/app/actions/inquiries"
 
 export function LeadCapture() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  // Radix Select는 form.reset()에 반응하지 않으므로 선택값을 직접 들고 있는다.
+  const [inquiryType, setInquiryType] = useState("")
   const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,7 +33,7 @@ export function LeadCapture() {
       phone: String(fd.get("phone") ?? ""),
       company: String(fd.get("company") ?? ""),
       contactType: "lead-capture",
-      inquiryType: String(fd.get("inquiryType") ?? ""),
+      inquiryType,
       message: String(fd.get("message") ?? ""),
       privacyAgree: fd.get("privacyAgree") === "on",
       marketingAgree: fd.get("marketingAgree") === "on",
@@ -52,6 +54,7 @@ export function LeadCapture() {
     })
 
     form.reset()
+    setInquiryType("")
   }
 
   return (
@@ -164,7 +167,7 @@ export function LeadCapture() {
 
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground">문의 유형 *</label>
-                      <Select name="inquiryType" required>
+                      <Select name="inquiryType" required value={inquiryType} onValueChange={setInquiryType}>
                         <SelectTrigger>
                           <SelectValue placeholder="문의 유형을 선택하세요" />
                         </SelectTrigger>
