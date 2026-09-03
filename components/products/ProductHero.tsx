@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import type { Product } from "@/data/products"
@@ -53,8 +54,8 @@ export function ProductHero({ product }: ProductHeroProps) {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-beombiom-primary hover:bg-beombiom-primary/90">
-                견적 문의
+              <Button asChild size="lg" className="bg-beombiom-primary hover:bg-beombiom-primary/90">
+                <Link href="/contact">견적 문의</Link>
               </Button>
               <Button size="lg" variant="outline">
                 카탈로그 다운로드

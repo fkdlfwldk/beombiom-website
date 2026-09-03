@@ -47,7 +47,9 @@ export function NavBar() {
             <Globe className="w-4 h-4 mr-1" />
             KO
           </Button>
-          <Button className="bg-beombiom-primary hover:bg-beombiom-primary/90">문의하기</Button>
+          <Button asChild className="bg-beombiom-primary hover:bg-beombiom-primary/90">
+            <Link href="/contact">문의하기</Link>
+          </Button>
         </div>
 
         {/* Mobile Menu */}
@@ -74,7 +76,11 @@ export function NavBar() {
                   <Globe className="w-4 h-4 mr-2" />
                   한국어 / English
                 </Button>
-                <Button className="w-full bg-beombiom-primary hover:bg-beombiom-primary/90">문의하기</Button>
+                <Button asChild className="w-full bg-beombiom-primary hover:bg-beombiom-primary/90">
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>
+                    문의하기
+                  </Link>
+                </Button>
               </div>
             </div>
           </SheetContent>

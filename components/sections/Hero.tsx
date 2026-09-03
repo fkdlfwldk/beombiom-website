@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Zap, Clock, Leaf } from "lucide-react"
@@ -84,16 +85,20 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Button size="lg" className="bg-beombiom-primary hover:bg-beombiom-primary/90 text-white">
-                솔루션 살펴보기
-                <ArrowRight className="ml-2 w-4 h-4" />
+              <Button asChild size="lg" className="bg-beombiom-primary hover:bg-beombiom-primary/90 text-white">
+                <Link href="/solutions">
+                  솔루션 살펴보기
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-beombiom-dark bg-transparent"
               >
-                자료 요청
+                {/* 자료를 즉시 내려받는 게 아니라 요청을 받는 동작이므로 문의 폼으로 보낸다 */}
+                <Link href="/contact">자료 요청</Link>
               </Button>
             </motion.div>
 

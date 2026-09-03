@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 import { NavBar } from "@/components/ui/NavBar"
 import { Footer } from "@/components/ui/Footer"
 import { SectionTitle } from "@/components/ui/SectionTitle"
@@ -162,9 +163,11 @@ export default function SolutionsPage() {
                               </div>
                             </div>
 
-                            <Button className="bg-beombiom-primary hover:bg-beombiom-primary/90">
-                              상세 문의하기
-                              <ArrowRight className="ml-2 w-4 h-4" />
+                            <Button asChild className="bg-beombiom-primary hover:bg-beombiom-primary/90">
+                              <Link href="/contact">
+                                상세 문의하기
+                                <ArrowRight className="ml-2 w-4 h-4" />
+                              </Link>
                             </Button>
                           </div>
 
